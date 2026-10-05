@@ -22,11 +22,11 @@ def main(argv=None):
     elif args.sample == "rarity":
         item = parse_item("item_id=sword;atk=10;rarity=3")
         grader.grade(item)
-        print("score=%d" % grader.seen["sword"])
+        print("score=%d" % grader.seen["sword"]["score"])
     elif args.sample == "unknown":
         item = parse_item("item_id=charm;lucky=5")
         grader.grade(item)
-        print("score=%d" % grader.seen["charm"])
+        print("score=%d" % grader.seen["charm"]["score"])
     elif args.sample == "parse":
         item = parse_item("item_id=broken;atk=abc")
         print("tier=%s" % grader.grade(item))
